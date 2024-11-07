@@ -1,0 +1,14 @@
+# testing
+node_modules
+dist
+transcripts
+tests
+logs
+
+# developing
+.vscode
+.idea
+.env
+
+# misc
+.DS_Store

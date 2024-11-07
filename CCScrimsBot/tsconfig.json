@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "target": "ES2022",
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+        "strict": true,
+        "esModuleInterop": true,
+        "preserveConstEnums": true,
+        "emitDecoratorMetadata": true,
+        "allowSyntheticDefaultImports": true,
+        "experimentalDecorators": true,
+        "resolveJsonModule": true,
+        "skipLibCheck": true,
+        "sourceMap": true,
+        "allowJs": true,
+        "rootDir": "src",
+        "outDir": "dist",
+        "paths": {
+            "lib": ["./src/lib/index.ts"],
+            "@module/*": ["./src/modules/*"],
+            "@Constants": ["./src/Constants.ts"]
+        }
+    },
+    "include": ["src"]
+}

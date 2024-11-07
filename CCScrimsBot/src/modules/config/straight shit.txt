@@ -1,0 +1,16 @@
+handler: async (interaction) => {
+        // Create an embed message
+        const embed = new EmbedBuilder()
+            .setColor("#0099ff") // Set the color of the embed
+            .setTitle("Ping Response") // Set the title of the embed
+            .setDescription("Pong!") // Set the description of the embed
+            .setTimestamp(); // Add a timestamp to the embed
+
+        // Reply with the embed
+        await interaction.reply({ embeds: [embed], ephemeral: true });
+
+
+
+        async function fetchMCUsername(userId: string): Promise<string> {
+    return `MinecraftUser_${userId}`; // Replace with real fetching logic
+}
