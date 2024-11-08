@@ -82,7 +82,7 @@ class RegistrationHandler extends ExchangeHandler {
 Component(new RegistrationHandler().asComponent())
 
 BotMessage({
-    name: "Wiadomosc reg",
+    name: "Registeracja tiertester",
     builder(builder) {
         return builder
             .addEmbeds(new EmbedBuilder().setColor(Colors.White).setTitle(`Zregisteruj sie!`))
