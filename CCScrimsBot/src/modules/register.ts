@@ -75,17 +75,17 @@ class RegistrationHandler extends ExchangeHandler {
         const minecraft = interaction.state.getFieldValue("mc_account") as MojangResolvedUser
         const offset = interaction.state.getFieldValue("offset") as number
         await updateRegistration(interaction.user, minecraft.id, offset)
-        return new MessageOptionsBuilder().setContent("Registration Updated.")
+        return new MessageOptionsBuilder().setContent("INFO poprawiono.")
     }
 }
 
 Component(new RegistrationHandler().asComponent())
 
 BotMessage({
-    name: "Registration Message",
+    name: "INFO Wiadomosc",
     builder(builder) {
         return builder
-            .addEmbeds(new EmbedBuilder().setColor(Colors.White).setTitle(`Update your registration here!`))
+            .addEmbeds(new EmbedBuilder().setColor(Colors.White).setTitle(`Popraw swoje INFO!`))
             .addActions(
                 new ButtonBuilder()
                     .setCustomId("Register")
