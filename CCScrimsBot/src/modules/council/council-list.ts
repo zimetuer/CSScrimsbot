@@ -64,8 +64,8 @@ export class CouncilListFeature extends BotModule {
         const embed = new EmbedBuilder().setTitle(`${role} Tier Tester list`)
 
         const permissions = ScrimsBot.INSTANCE!.permissions
-        const councilHead = permissions.getMembersWithPosition(`${role} Head`)
-        const council = permissions.getMembersWithPosition(`${role} Council`).subtract(councilHead)
+        const councilHead = permissions.getMembersWithPosition(`${role} Glowny`)
+        const council = permissions.getMembersWithPosition(`${role} Tier Tester`).subtract(councilHead)
 
         const councilRole = PositionRole.getRoles(`${role} Council`, guild.id)[0]
         if (councilRole) embed.setColor(councilRole.color)
@@ -95,9 +95,6 @@ export class CouncilListFeature extends BotModule {
             [
                 await profile?.fetchMCUsername(),
                 member.toString(),
-                currentTime &&
-                    currentTime.set({ minute: Math.round(currentTime.minute / 10) * 10 }).toFormat("h:mm a") +
-                        ` (GMT${profile?.getUTCOffset()})`,
             ]
                 .filter((v) => v)
                 .join(" | ")
