@@ -20,7 +20,7 @@ for (const rank of Object.values(RANKS)) {
         },
     })
 
-    Config.declareType(`${rank} Lista TierTesterow`)
+    Config.declareType(`${rank} Council List Message`)
 }
 
 export class CouncilListFeature extends BotModule {
@@ -41,7 +41,7 @@ export class CouncilListFeature extends BotModule {
 
     async update() {
         for (const rank of Object.values(RANKS)) {
-            const config = this.bot.getConfig(`${rank} Tier Tester List`)
+            const config = this.bot.getConfig(`${rank} Council List Message`)
             if (!config.length) continue
 
             for (const entry of config) {
@@ -61,13 +61,13 @@ export class CouncilListFeature extends BotModule {
     }
 
     async buildMessage(guild: Guild, role: string) {
-        const embed = new EmbedBuilder().setTitle(`${role} Tier Tester List`)
+        const embed = new EmbedBuilder().setTitle(`${role} Council List`)
 
         const permissions = ScrimsBot.INSTANCE!.permissions
-        const councilHead = permissions.getMembersWithPosition(`${role} Glowny`)
-        const council = permissions.getMembersWithPosition(`${role} Tier Tester`).subtract(councilHead)
+        const councilHead = permissions.getMembersWithPosition(`${role} Head`)
+        const council = permissions.getMembersWithPosition(`${role} Council`).subtract(councilHead)
 
-        const councilRole = PositionRole.getRoles(`${role} Tier Tester`, guild.id)[0]
+        const councilRole = PositionRole.getRoles(`${role} Council`, guild.id)[0]
         if (councilRole) embed.setColor(councilRole.color)
 
         const getOffset = (member: GuildMember) => UserProfile.cache.get(member.id)?.offset ?? Infinity
