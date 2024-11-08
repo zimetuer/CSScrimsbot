@@ -44,7 +44,7 @@ export async function updateRegistration(user: User, mcUUID: string, offset: num
 
 export async function getInitialState(interaction: CommandHandlerInteraction, state: ExchangeHandlerState) {
     const profile = UserProfile.cache.get(interaction.user.id)
-    if (profile && (profile.mcUUID !== undefined || profile.offset !== undefined)) {
+    if (profile && (profile.mcUUID !== ufndeined || profile.offset !== undefined)) {
         if (profile.mcUUID !== undefined) {
             const mc = await MojangClient.uuidToProfile(profile.mcUUID).catch(console.error)
             if (mc) state.setFieldValue("mc_account", mc?.name, mc)
