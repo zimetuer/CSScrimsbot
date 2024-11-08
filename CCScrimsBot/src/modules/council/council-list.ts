@@ -61,7 +61,7 @@ export class CouncilListFeature extends BotModule {
     }
 
     async buildMessage(guild: Guild, role: string) {
-        const embed = new EmbedBuilder().setTitle(`${role} Council List`)
+        const embed = new EmbedBuilder().setTitle(`${role} Tier Tester list`)
 
         const permissions = ScrimsBot.INSTANCE!.permissions
         const councilHead = permissions.getMembersWithPosition(`${role} Head`)
