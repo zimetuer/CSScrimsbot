@@ -21,7 +21,7 @@ import {
 export const FIELDS = [
     ExchangeInputField("McAccount", {
         customId: "mc_account",
-        label: "What is your Minecraft IGN?",
+        label: "Jaki masz nick",
         style: TextInputStyle.Short,
         minLength: 3,
         maxLength: 16,
@@ -29,12 +29,12 @@ export const FIELDS = [
     }),
     ExchangeInputField("Offset", {
         customId: "offset",
-        label: "What time is it for you? (for time zone)",
+        label: "Ktory masz czas ",
         style: TextInputStyle.Short,
         minLength: 1,
         maxLength: 12,
         required: true,
-        placeholder: "e.g. 4:15, 5:30 p.m., 8:00 PM, 19:00, ...",
+        placeholder: "(Wiem kurwa zjebany pytanie podaj godzine po prostu)",
     }),
 ]
 
