@@ -89,7 +89,7 @@ SlashCommand({
             const TrybValue = interaction.options.getString(Options.tryb, true);
 
             const tier = TierDisplayNames[tierValue];
-            const tryb = TrybDisplayNames[TrybValue] || "Zły tryb"; // Default to "Unknown Tryb" if it's invalid
+            const tryb = TrybDisplayNames[TrybValue] || "Zly tryb"; // Default to "Unknown Tryb" if it's invalid
 
             // Create the embed with the tier mention and other details
             const embed = new EmbedBuilder()

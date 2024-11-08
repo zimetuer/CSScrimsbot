@@ -82,7 +82,7 @@ export class CouncilListFeature extends BotModule {
         )
 
         embed.setDescription(content.join("\n") || "None")
-        if (content.length) embed.setFooter({ text: "Council IGN | Discord | Local Time +/- 10 mins" })
+        if (content.length) embed.setFooter({ text: " " })
 
         return new MessageOptionsBuilder().addEmbeds(embed)
     }
@@ -90,8 +90,9 @@ export class CouncilListFeature extends BotModule {
     async buildCouncilInfo(member: GuildMember) {
         const profile = UserProfile.cache.get(member.id)
         const currentTime = profile?.getCurrentTime()
+        
         return (
-            `\`•\` ` +
+            `\` \` ` +
             [
                 await profile?.fetchMCUsername(),
                 member.toString(),
