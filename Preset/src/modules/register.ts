@@ -21,7 +21,7 @@ import {
 export const FIELDS = [
     ExchangeInputField("McAccount", {
         customId: "mc_account",
-        label: "What is your Minecraft IGN?",
+        label: "Jaki masz nick?",
         style: TextInputStyle.Short,
         minLength: 3,
         maxLength: 16,
@@ -29,7 +29,7 @@ export const FIELDS = [
     }),
     ExchangeInputField("Offset", {
         customId: "offset",
-        label: "What time is it for you? (for time zone)",
+        label: "Jaki masz czas? (time zone)",
         style: TextInputStyle.Short,
         minLength: 1,
         maxLength: 12,
@@ -75,7 +75,7 @@ class RegistrationHandler extends ExchangeHandler {
         const minecraft = interaction.state.getFieldValue("mc_account") as MojangResolvedUser
         const offset = interaction.state.getFieldValue("offset") as number
         await updateRegistration(interaction.user, minecraft.id, offset)
-        return new MessageOptionsBuilder().setContent("Registration Updated.")
+        return new MessageOptionsBuilder().setContent("Reg Poprawiono")
     }
 }
 
@@ -85,7 +85,7 @@ BotMessage({
     name: "Registration Message",
     builder(builder) {
         return builder
-            .addEmbeds(new EmbedBuilder().setColor(Colors.White).setTitle(`Update your registration here!`))
+            .addEmbeds(new EmbedBuilder().setColor(Colors.White).setTitle(`Zregisteruj sie!`))
             .addActions(
                 new ButtonBuilder()
                     .setCustomId("Register")
