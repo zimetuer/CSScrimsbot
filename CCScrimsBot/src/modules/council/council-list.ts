@@ -95,6 +95,9 @@ export class CouncilListFeature extends BotModule {
             [
                 await profile?.fetchMCUsername(),
                 member.toString(),
+                currentTime &&
+                    currentTime.set({ minute: Math.round(currentTime.minute / 10) * 10 }).toFormat("h:mm a") +
+                        ` (GMT${profile?.getUTCOffset()})`,
             ]
                 .filter((v) => v)
                 .join(" | ")
