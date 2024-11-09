@@ -78,10 +78,7 @@ export class ClipsEvalFeature extends BotModule {
                     // Send explanation as long as message is from after this rule was implemented (2023-05-18)
                     message.createdTimestamp > 1684387500000
                         ? message.author.send(
-                              `:warning:  **Your message from ${message.channel} was deleted since a possible Youtube link was detected!**` +
-                                  `\n The channel is NOT meant for you to promote your channel or share other people's videos, ` +
-                                  `rather to share cool clips you get throughout playing ` +
-                                  `and to have a chance for your clip to be included in our 'Clips of the Week' series.`,
+                              `:warning:  **Twoja wiadomosc zostala usunieta z ${message.channel} poniewaz byl to link do YT!**`
                           )
                         : null,
                 )
