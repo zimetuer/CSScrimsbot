@@ -2,6 +2,7 @@ import { EmbedBuilder, userMention } from "discord.js"
 import { Config, LocalizedSlashCommandBuilder, MessageOptionsBuilder, SlashCommand } from "lib"
 
 import { Positions } from "@Constants"
+import { permission } from "process"
 
 const Options = {
     Key: "key",
@@ -34,7 +35,7 @@ SlashCommand({
         .setDefaultMemberPermissions("0")
         .setDMPermission(false),
 
-    config: { permissions: { positionLevel: Positions.Staff } },
+    config: { permissions: { positionLevel: Positions.Staff} },
 
     async handleAutocomplete(interaction) {
         const focused = interaction.options.getFocused()

@@ -1,5 +1,7 @@
-import { SlashCommandBuilder, EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder } from "discord.js";
-import { SlashCommand, Config } from "lib";
+import { COUNCIL_PERMISSIONS, Positions, RANKS } from "@Constants";
+import { group } from "console";
+import { SlashCommandBuilder, EmbedBuilder, ButtonBuilder, ButtonStyle, ActionRowBuilder, User } from "discord.js";
+import { SlashCommand, Config, PermissionsManager } from "lib";
 import { UserProfile, MojangClient } from "lib";
 import { DateTime } from "luxon";
 
@@ -10,6 +12,14 @@ const Options = {
     tryb: "tryb",
     osoba: "osoba"
 };
+
+// onst COUNCIL_PERMISSIONS = [
+    //"ADMINISTRATOR", // Example of including a default admin permission
+   // "1298256878849228860", // Specific group role ID 1
+    //"1298257325450199152", // Specific group role ID 2
+  //  "1298257533743665172"  // Specific group role ID 3
+// ];
+
 
 // Map tier values to display names and user mentions
 const TierDisplayNames = {
@@ -64,10 +74,9 @@ SlashCommand({
                 .setDescription("Wybierz osobę do gry")
                 .setRequired(false)
         )
-        .setDefaultMemberPermissions("0")
         .setDMPermission(false),
 
-    config: { permissions: { positionLevel: "0" } },
+        config: { permissions: COUNCIL_PERMISSIONS },
 
     async handler(interaction) {
         await interaction.deferReply({ ephemeral: false });
@@ -95,7 +104,7 @@ SlashCommand({
             const tryb = TrybDisplayNames[trybValue as keyof typeof TrybDisplayNames] || "Zly tryb";
 
             let embedDescription = `> **IGN:** ${ign} | _${userTime}_ \n` +
-                `> **Tier:** ${tier.name} ${tier.mention}\n` +
+                `> **Tier:** ${tier.name}   \n` +
                 `> **Nazwa Serwera:** ${server}\n` +
                 `> **Tryb:** ${tryb}\n\n`;
 

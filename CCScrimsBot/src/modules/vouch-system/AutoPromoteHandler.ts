@@ -15,8 +15,9 @@ for (const rank of Object.values(RANKS)) {
 }
 
 const PROMOTION_PREFIX: Record<string, string> = {
-    Prime: "### ",
-    Premium: "## ",
+    Prime: "## ",
+    Private: "### ",
+    Premium: "# ",
 }
 
 export class AutoPromoteHandler {

@@ -14,5 +14,6 @@ export * from "./models/TransientRole"
 export * from "./models/UserProfile"
 export * from "./models/Vouch"
 export * from "./util"
+export * from "./models/Stats"
 
 export * from "./redis"

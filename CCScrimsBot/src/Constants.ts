@@ -13,36 +13,37 @@ export const Colors = DiscordColors as typeof DiscordColors & {
 }
 
 export const Positions = PositionRole.declarePositions({
-    Staff: "Zaloga",
-    TrialStaff: "Zaloga pod biorkiem",
-    Support: "Pomoc",
-    TrialSupport: "Pomoc pod biorkiem",
-
+    Staff: "Staff",
+    TrialStaff: "Tymczasowy Staff",
+    Support: "Helper",
+    TrialSupport: "Tymczasowy Helper",
+    
     Member: "Uzytkownik",
-    Banned: "Zjeb",
-    Muted: "Maly zjeb",
+    Banned: "Zbanowany",
+    Muted: "Zmutowany",
 
-    SupportBlacklisted: "Jeszcze wiekszy debil",
-    SuggestionsBlacklisted: "Pierdolony debil",
+    SupportBlacklisted: "SupportBlacklisted",
+    SuggestionsBlacklisted: "SuggestionsBlacklisted",
 })
 
 export const RANKS = PositionRole.declarePositions({
-    Pristine: "Ogar",
-    Prime: "Profesjonalista",
-    Premium: "Koks",
+    Pristine: "Pristine",
+    Prime: "Prime",
+    Private: "Private",
+    Premium: "Premium"
 })
 
 for (const rank of Object.values(RANKS)) {
-    PositionRole.declarePosition(`${rank} tiertester`)
-    PositionRole.declarePosition(`${rank} Glowny`)
+    PositionRole.declarePosition(`${rank} Council`)
+    PositionRole.declarePosition(`${rank} Head`)
 }
 
 export const COUNCIL_PERMISSIONS: Permissions = {
-    positions: Object.values(RANKS).map((rank) => `${rank} tiertester`),
+    positions: Object.values(RANKS).map((rank) => `${rank} Council`),
 }
 
 export const COUNCIL_HEAD_PERMISSIONS: Permissions = {
-    positions: Object.values(RANKS).map((rank) => `${rank} Glowny`),
+    positions: Object.values(RANKS).map((rank) => `${rank} Head`),
 }
 
 export { default as Emojis } from "./assets/emojis.json"
