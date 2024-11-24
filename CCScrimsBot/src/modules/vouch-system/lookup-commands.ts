@@ -43,20 +43,20 @@ SlashCommand({
             option
                 .setRequired(false)
                 .setName(Options.User)
-                .setDescription("The Discord mention of the person to check."),
+                .setDescription("Discord osoby ktorej chcesz sprawdzic Vouche"),
         )
         .addStringOption((option) =>
             option
                 .setRequired(false)
                 .setName(Options.Username)
-                .setDescription("The Discord username of the person to check.")
+                .setDescription("Discord osoby ktorej chcesz sprawdzic Vouche")
                 .setAutocomplete(true),
         )
         .addStringOption((option) =>
             option
                 .setRequired(false)
                 .setName(Options.Ign)
-                .setDescription("The Minecraft username of the person to check.")
+                .setDescription("Nick osoby (Musi byc zarejestrowana)")
                 .setMinLength(3)
                 .setMaxLength(16),
         )
@@ -81,7 +81,7 @@ SlashCommand({
             user = userInput
         } else if (nameInput) {
             const userId = UserProfile.resolve(nameInput)?._id
-            if (!userId) throw new UserError(`User can't be resolved from ${userId}`)
+            if (!userId) throw new UserError(`Nie moge znalesc ${userId}`)
             user = await interaction.client.users.fetch(userId)
         } else if (ignInput) {
             const userId = await fetchUserId(ignInput)

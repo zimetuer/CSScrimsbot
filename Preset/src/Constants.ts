@@ -27,9 +27,9 @@ export const Positions = PositionRole.declarePositions({
 })
 
 export const RANKS = PositionRole.declarePositions({
-    Pristine: "Pristine",
-    Prime: "Prime",
-    Private: "Private",
+    Pristine: "Ogar",
+    Prime: "Profesjonalista",
+    Private: "Koks",
     Premium: "Premium",
 })
 

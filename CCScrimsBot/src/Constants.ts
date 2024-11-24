@@ -27,10 +27,9 @@ export const Positions = PositionRole.declarePositions({
 })
 
 export const RANKS = PositionRole.declarePositions({
-    Pristine: "Pristine",
-    Prime: "Prime",
-    Private: "Private",
-    Premium: "Premium"
+    Pristine: "Ogar",
+    Prime: "Profesjonalista",
+    Private: "Koks",
 })
 
 for (const rank of Object.values(RANKS)) {
